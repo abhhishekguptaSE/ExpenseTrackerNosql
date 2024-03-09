@@ -12,7 +12,7 @@ async function showDailyReport() {
 
     const token = localStorage.getItem("token");
     const { data } = await axios.post(
-      "http://localhost:3500/report/dailyreport",
+      "http://18.204.216.193:3500/report/dailyreport",
       date,
       { headers: { Authorization: token } }
     );
@@ -41,7 +41,7 @@ async function showMonthlyReport() {
 
     const token = localStorage.getItem("token");
     const { data } = await axios.post(
-      "http://localhost:3500/report/monthreport",
+      "http://18.204.216.193:3500/report/monthreport",
       monthly,
       { headers: { Authorization: token } }
     );
@@ -64,9 +64,12 @@ async function showMonthlyReport() {
 async function handleDownload() {
   const token = localStorage.getItem("token");
   try {
-    const response = await axios.get("http://localhost:3500/report/download", {
-      headers: { Authorization: token },
-    });
+    const response = await axios.get(
+      "http://18.204.216.193:3500/report/download",
+      {
+        headers: { Authorization: token },
+      }
+    );
 
     if (response.status === 200) {
       const a = document.createElement("a");
@@ -85,7 +88,7 @@ async function showPrevReport() {
   const token = localStorage.getItem("token");
   try {
     const { data } = await axios.get(
-      "http://localhost:3500/report/prevReport",
+      "http://18.204.216.193:3500/report/prevReport",
       {
         headers: { Authorization: token },
       }
