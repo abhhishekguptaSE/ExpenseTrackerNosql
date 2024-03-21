@@ -95,7 +95,7 @@ async function create() {
     if (ispremiumuser) {
       showPremiumuserMessage();
       showLeaderboard();
-      //   reports();
+      reports();
     }
     expenseList.innerHTML = "";
     let { data } = await axios.get(
@@ -118,7 +118,6 @@ async function create() {
     }
   }
 }
-reports();
 
 function reports() {
   const messageDiv = document.getElementById("report");
